@@ -1,26 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppStateProvider } from './AppStateContext';
+import Counter from './Counter';
+import './App.css'; // Import the CSS file
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppStateProvider>
+      <div>
+        <h1>React TypeScript Context API App</h1>
+        <Counter />
+      </div>
+    </AppStateProvider>
   );
-}
+};
 
 export default App;
